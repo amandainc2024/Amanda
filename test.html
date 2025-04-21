@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Moving Hole Effect</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #111;
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .masked-image {
+      width: 600px;
+      height: auto;
+      -webkit-mask-image: radial-gradient(circle 60px at center, transparent 0, transparent 59px, black 60px);
+      mask-image: radial-gradient(circle 60px at center, transparent 0, transparent 59px, black 60px);
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-composite: destination-out;
+      mask-composite: exclude;
+    }
+  </style>
+</head>
+<body>
+
+  <img src="https://via.placeholder.com/600x400" alt="Image" class="masked-image" />
+
+  <script>
+    const img = document.querySelector('.masked-image');
+
+    let x = 300, y = 200;         // Start position of the hole
+    let dx = 2, dy = 2;           // Direction/speed
+    const radius = 60;
+
+    function animate() {
+      const rect = img.getBoundingClientRect();
+      const maxX = rect.width;
+      const maxY = rect.height;
+
+      // Bounce on edges
+      if (x - radius <= 0 || x + radius >= maxX) dx *= -1;
+      if (y - radius <= 0 || y + radius >= maxY) dy *= -1;
+
+      // Move the mask center
+      x += dx;
+      y += dy;
+
+      const mask = `radial-gradient(circle ${radius}px at ${x}px ${y}px, transparent 0, transparent ${radius - 1}px, black ${radius}px)`;
+      img.style.webkitMaskImage = mask;
+      img.style.maskImage = mask;
+
+      requestAnimationFrame(animate);
+    }
+
+    // Start moving in random direction
+    dx = (Math.random() - 0.5) * 6;
+    dy = (Math.random() - 0.5) * 6;
+
+    animate();
+  </script>
+</body>
+</html>
