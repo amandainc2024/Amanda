@@ -67,3 +67,13 @@ if (what == 'g') {
 }}
  
     }
+    
+function fillYear(){
+  var yr = document.getElementById('year');
+  var date = new Date();
+  var cYr = date.getFullYear();
+  
+  yr.innerText = cYr;
+  
+}
+fillYear()
