@@ -76,4 +76,85 @@ function fillYear(){
   yr.innerText = cYr;
   
 }
-fillYear()
+fillYear();
+
+const pData = [
+  {
+    'img':'images/pp1.PNG',
+    'ps':'Create a poster that could boost sales during Christmas by use of a discount',
+    'des':'Tito Cakes wanted to take advantage of the festive season to get more sales. They needed a poster that could inform their customers and potential customers about their offer and retain them for the whole next year.',
+    'tes':'This beautiful, am sure my message will be heard. Thank you'
+  },
+    {
+    'img':'images/pp3.PNG',
+    'ps':"Designing a logo as part of the ministries' brand",
+    'des':'The ministry lacked a brand logo to be used on the t shirts, social media, posters and other media.',
+    'tes':'Not exactly my wish, but definitely better. Thank you.'
+  },
+  {
+    'img':'images/pp2.PNG',
+    'ps':'Create business cards to promote contact sharing to potential customers.',
+    'des':'Tito Cakes is a business that usually gains customers from affiliate and communication. Martha wanted business cards with her contacts to build a bigger contact list.',
+    'tes':'This is great design. Well done'
+  },
+  {
+    'img':'images/pp4.PNG',
+    'ps':'Create a real life mock up for realistic visualization of Nadia\'s picture.',
+    'des':'Nadia wanted to have a magazine cover design to visualize its real life use and to be used in her eMagazine',
+    'tes':'This looks cool, I like everything at large.'
+  },
+  {
+    'img':'images/pp5.PNG',
+    'ps':'Create a poster to provide the required information and convert viewers to attendees.',
+    'des':'The organizers of this event were just a start up that didn\'t have a lit engagement. They sought a social media poster that could provide information about the concert and attract people.',
+    'tes':'The poster is better than what I had in mind . Thanks for the professional advice to bring the out the purpose instead of the my wants.'
+  },
+  {
+    'img':'images/pp6.PNG',
+    'ps':'Design a poster for my vocational institute highlighting the available courses.',
+    'des':'David was starting up a vocational institute with four courses in mind. He sought a poster that could advertise his start up and also gain customers.',
+    'tes':'Good work! This is my actual expectation.'
+  }
+];
+
+function  fillPP(d) {
+  var current = parseInt(document.getElementById("id").innerText.replace('[','').replace(']',''));
+  
+  var ps = document.getElementById('ps');
+  var des = document.getElementById('des');
+  var tes = document.getElementById('tes');
+  var img = document.getElementById('imgP');
+  
+  var data = () => {
+    if (d == 'f') {
+      return pData[current];
+    } else {
+      return pData[current - 2]
+    }
+  };
+  
+  ps.innerHTML = '<u>Project Scope: </u>'+ data().ps;
+  des.innerHTML = data().des;
+  tes.innerHTML = data().tes;
+  img.src = data().img;
+  
+  if(current < 6 &&d == 'f'){
+    document.getElementById("id").innerText = '['+(current+1)+']';
+  }
+  else if (current == 6 && d == 'f') {
+    document.getElementById("id").innerText = '[' + (current) + ']';
+  }
+  else if (current < 7 && d == 'b') {
+    document.getElementById("id").innerText = '[' + (current - 1) + ']';
+  }
+  else if (current == 1 && d == 'b') {
+  document.getElementById("id").innerText = '[' + (current ) + ']';
+}
+ console.log(current)
+}
+
+
+
+ 
+
+ console.log(window.location .href)
