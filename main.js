@@ -180,7 +180,7 @@ setTimeout(function() {
   setTimeout(function() {
   document.querySelector('.splash').style.display = 'none';
 }, 2000)
-}, 6000)
+}, 3000)
 
 
  

@@ -14,11 +14,11 @@
    <nav>
         <img src="logo.png" alt="Logo">
       <div class="right">
-       <a href="">Overview</a>
-       <a href="">Services</a>
-       <a href="">Expertise</a>
+       <a href="#ov">Overview</a>
+       <a href="#expert">Expertise</a>
+       <a href="#projects">Projects</a>
        
-       <button>Hire Us</button>
+       <button onclick="window.location.href ='#contact'">Hire Us</button>
      </div>
    </nav> 
    
@@ -43,7 +43,7 @@
    
    <section class="overview" id="overview">
      <div class="left">
-       <span class="ni">Overview</span>
+       <span class="ni" id="ov">Overview</span>
        <img src="images/u30.jpeg" class="t" alt="">
        <h3>Amanda Inc. transforms strategic ideas into impactful digital experiences.</h3>
      </div>
@@ -85,7 +85,7 @@
    </div>
    
    
-   <section class="services">
+   <section class="services" id="expert">
     <div class="left">
      <span class="ni">Expertise</span>
      <h3>We are experts when it comes to marketing in....</h3>
@@ -122,7 +122,7 @@
    </section>
    
    
-   <section class="pp">
+   <section class="pp" id="projects">
      <div class="left">
        <span class="ni">Projects</span>
        
@@ -147,7 +147,7 @@
    
    
    <footer>
-     <div class="f_first">
+     <div class="f_first" id="contact">
       <form action="">
        <h3>Talk to Us!<b>We are happy to help!</b></h3>
        <input type="text" placeholder="Email/Whatsapp number">
@@ -175,9 +175,9 @@
        
        <div>
          <span>Navigation</span>
-         <a href="">Overview</a>
-         <a href="">Services</a>
-         <a href="">Expertise</a>
+         <a href="#ov">Overview</a>
+         <a href="#projects">Projects</a>
+         <a href="#expert">Expertise</a>
        </div>
        <div class="social">
          <span>Social</span>
@@ -189,15 +189,15 @@
        </div>
        <div>
          <span>Company</span>
-         <a href="">About Us</a>
-         <a href="">Career</a>
-         <a href="">Contact Us</a>
+         <a href="#ov">About Us</a>
+         <a href="#projects">Career</a>
+         <a href="#contact">Contact Us</a>
        </div>
        <div>
          <span>Legal</span>
-         <a href="">Privacy Policy</a>
-         <a href="">Terms of service</a>
-         <a href="">Disclaimer</a>
+         <a href="legal/privacy">Privacy Policy</a>
+         <a href="legal/terms">Terms of service</a>
+         <a href="legal/disclaimer">Disclaimer</a>
        </div>
      </div>
      <p>Copyright &copy; <span id="year"></span> AmandaInc. All rights reserved.</p>
