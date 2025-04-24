@@ -19,6 +19,8 @@
     background:white;
     display: grid;
     place-items: center;
+    transition: opacity 2s;
+    
 }
 .splash img{
     filter: grayscale(1);

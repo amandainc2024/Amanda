@@ -176,8 +176,12 @@ function  fillPP(d) {
 }
 
 setTimeout(function() {
-  document.querySelector('.splash').style.display = 'none'
-},18000)
+  document.querySelector('.splash').style.opacity = '0';
+  setTimeout(function() {
+  document.querySelector('.splash').style.display = 'none';
+}, 2000)
+}, 6000)
+
 
  
 
