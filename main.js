@@ -1,8 +1,19 @@
 const img = document.querySelector('.hero-img');
 
     let x = 300, y = 200;         // Start position of the hole
-    let dx = 2, dy = 2;           // Direction/speed
-    const radius = 80;
+    let dx = 2, dy = 2;
+    // Direction/speed
+    
+    let radius;
+      if(window.innerWidth < 400){
+        radius = 60;
+        x = 200;
+        y = 100;
+      }
+      else{
+        radius = 80;
+      }
+    
 
     function animate() {
       const rect = img.getBoundingClientRect();
@@ -24,10 +35,15 @@ const img = document.querySelector('.hero-img');
       requestAnimationFrame(animate);
     }
 
-    // Start moving in random direction
+    if(window.innerWidth < 400){
+      dx = 1.8975638002117152;
+      dy = -1.5310844066923595;
+    }else{
     dx = (Math.random() - 0.5) * 6;
     dy = (Math.random() - 0.5) * 6;
-
+    }
+    
+console.log(dx + ' ' + dy);
     animate();
     
     function shift(what){
@@ -39,7 +55,13 @@ const img = document.querySelector('.hero-img');
        img.style.width='1%';
        setTimeout(function() {
          imgS();
-         img.style.width='100%';
+         
+         if (window.innerWidth < 400) {
+          img.style.width='50%';
+         }
+        else {
+          img.style.width='100%';
+        }
        },300)
 
      }
@@ -153,7 +175,9 @@ function  fillPP(d) {
  console.log(current)
 }
 
-
+setTimeout(function() {
+  document.querySelector('.splash').style.display = 'none'
+},18000)
 
  
 

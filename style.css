@@ -10,6 +10,39 @@
     box-sizing: border-box;
     margin: 0 0 0 0;
 }
+.splash {
+    position: fixed;
+    z-index: 744577754454444445;
+    inset:0;
+    width: 100%;
+    height: 100%;
+    background:white;
+    display: grid;
+    place-items: center;
+}
+.splash img{
+    filter: grayscale(1);
+    animation: z 2s linear infinite, gs 18s linear;
+}
+@keyframes z{
+    0%{
+        opacity: 0;
+    }
+    65%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes gs{
+    0%{
+        filter: grayscale(1);
+    }
+    100%{
+        filter: grayscale(0);
+    }
+}
 body {
     background: #eee;
 }
@@ -132,6 +165,9 @@ nav button{
 .overview .left{
    width: 20vw;
     
+}
+.overview .left h3{
+    display: none;
 }
 .overview .left .ni{
     margin: 20px 8px;
@@ -309,13 +345,13 @@ tr:hover .fa-chevron-right{
     display: block;
     margin:30px auto ;
 }
-.pp .right button{
+.pp .left button{
     width: 100px;
     color: #000;
     font-size:  1em;
     
 }
-.pp .right button:hover{
+.pp .left button:hover{
     background: black;
     color: white;
 }
@@ -349,6 +385,8 @@ footer > div.f_first form input{
     border-width: 0 0 1px 0;
     background: none;
     margin: 12px 1px;
+    outline: none;
+    color: #fff;
     border-radius: 0;
 }
 footer > div.f_first form button{
@@ -424,5 +462,167 @@ footer > p{
 #tes{
     font-family: "Carattere",cursive;
 }
+.pp .right .ni{
+    display: none;
+}
 @media screen and (max-width: 400px) {
+    nav img{
+        aspect-ratio: 1/1;
+        width: 27px;
+        object-fit: cover;
+        object-position: left;
+    }
+    .first{
+        flex-direction: column;
+        margin-block: 75px 0px;
+    }
+    .first .left{
+        flex-direction: row;
+        width: 100%;
+    }
+    .first .image{
+        width: 50%;
+    }
+    .first h1{
+        width:100%;
+        font-size: 2.2em;
+        margin-top: 20px;
+    }
+    .hic{
+        aspect-ratio: 1/1.2;
+        width: 97vw;
+    }
+    .hero-img{
+        height: 90%;
+        object-fit: cover;
+        object-position: left;
+        -webkit-mask-image: radial-gradient(circle 20px at center, transparent 0, transparent 19px, black 20px);
+        mask-image: radial-gradient(circle 20px at center, transparent 0, transparent 19px, black 20px);
+;
+    }
+    .hic .am img{
+        aspect-ratio: 1/1;
+        width: 100%;
+        object-fit: cover;
+        object-position: left;
+    }
+    .overview{
+        flex-direction: column;
+    }
+    .overview .left{
+        width: 100%;
+        
+        position: relative;
+    }
+    .overview .left img{
+        width: 25vw;
+        display: inline;
+    }
+    .overview .left h3{
+        width: 65vw;
+        position: absolute;
+        top: 20%;
+        left: 32vw;
+        display: block;
+    }
+    .overview .left .ni{
+        margin-right: 60vw;
+    }
+    .overview .right{
+        width: 100%;
+        
+    }
+    .overview .right h3{
+        display: none;
+    }
+    .overview .right p{
+        font-size: .8em;
+    }
+    .wnu h2{
+        font-size: 1em;
+    }
+    .wnu .con .item{
+        width: 49%;
+    }
+    .wnu .con{
+        padding: 1%;
+    }
+    .services{
+        flex-direction: column;
+    }
+    .services .left{
+        width: 100%;
+    }
+    .services .right{
+        width: 100%;
+        flex-direction: row;
+    }
+    .services .right img{
+        width: 50%;
+    }
+    .services .right div{
+        flex-direction: column;
+        gap:10px;
+        padding-left: 10px;
+    }
+    .pp{
+        flex-direction: column-reverse;
+    }
+    .pp .left{
+        width: 95%;
+    }
+   .pp .left button {
+    width: 100px;
+    color: #000;
+    font-size: 1em;
+    
+}
+    .pp .left button:hover{
+        color: #fff;
+    }
+
+    .pp .left > .ni:first-of-type{
+        display: none;
+    }
+    .pp .left div{
+        width: 100%;
+        
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+    }
+    .pp .right img{
+        width: 60vw;
+        margin:0 20vw;
+    }
+    .pp .right span.ni{
+        display: inline;
+    }
+    .pp .right #id, .pp .right div{
+        display: none;
+    }
+    footer{
+        padding: 20px 15px 1px;
+    }
+    footer > div.f_first{
+        flex-direction: column-reverse;
+    }
+    footer > div.f_first form{
+        width: 100%;
+    }
+    footer > div.f_first .inf{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    footer > div.f_first .inf .item{
+        margin: 0;
+        width: 28%;
+    }
+    footer > div.f_first form input{
+        margin: 18px 1px;
+        width: 90%;
+    }
 }
