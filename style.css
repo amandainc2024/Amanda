@@ -22,7 +22,23 @@
     transition: opacity 2s;
     
 }
+
+.splash i{
+    position: fixed;
+    z-index: 7445777544544444445;
+    bottom: 20px;
+    
+    width: 100%;
+    
+    background:white;
+    text-align: center;
+    font-size: .7em;
+    transition: opacity 2s;
+    
+}
+
 .splash img{
+    
     filter: grayscale(1);
     animation: z 2s linear infinite, gs 18s linear;
 }
@@ -47,6 +63,7 @@
 }
 body {
     background: #eee;
+    margin-top: 40px;
 }
 nav{
     position: fixed;
