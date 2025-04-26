@@ -186,3 +186,5 @@ setTimeout(function() {
  
 
  console.log(window.location .href)
+var next = document.getElementById('next');
+next.value = window.location.href + '/success.html';
