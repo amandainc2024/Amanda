@@ -159,6 +159,7 @@ function  fillPP(d) {
   des.innerHTML = data().des;
   tes.innerHTML = data().tes;
   img.src = data().img;
+  img.setAttribute('alt', 'Project')
   
   if(current < 6 &&d == 'f'){
     document.getElementById("id").innerText = '['+(current+1)+']';
