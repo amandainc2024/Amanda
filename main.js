@@ -6,6 +6,7 @@ const img = document.querySelector('.hero-img');
     
     let radius;
       if(window.innerWidth < 400){
+        //document.querySelector('#lo').src = '';
         radius = 60;
         x = 200;
         y = 100;
@@ -184,3 +185,6 @@ setTimeout(function() {
 }, 3000)
 
 
+function ad() {
+  
+}

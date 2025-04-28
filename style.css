@@ -38,7 +38,7 @@
 }
 
 .splash img{
-    
+    width: 180px;
     filter: grayscale(1);
     animation: z 2s linear infinite, gs 18s linear;
 }
@@ -80,7 +80,7 @@ nav{
     align-items: center;
 }
 nav img{
-     width: 120px;
+     width: 30px;
 }
 nav a{
     text-decoration: none;
@@ -139,7 +139,7 @@ nav button{
     width: 90vw;
     position: relative;
     margin: 20px 5%;
-    aspect-ratio: 20/9;
+    aspect-ratio: 20/8.5;
     overflow: hidden;
 }
 .hero-img{
@@ -163,7 +163,7 @@ nav button{
     place-items: center;
 }
 .hic .am img{
-    width: 100%;
+    width: 40%;
     }
 .ni{
     font-size: 8px;
