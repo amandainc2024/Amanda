@@ -1,3 +1,5 @@
 User-agent: *
 Disallow: /success.html
-Sitemap: /sitemap.xml
+Allow: /
+
+Sitemap: https://amandainc.xyz/sitemap.xml
