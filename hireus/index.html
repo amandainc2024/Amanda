@@ -5,10 +5,176 @@
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1">
  <title></title>
+ <style>
+  *{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+  }
+  header{
+   width:100%;
+   height: 20vh;
+   background-position: left center;
+   background-size: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-image: url("../images/smedia.jpg");
+   background-color: #0596F9;
+   color: white;
+  }
+  div{
+   width:100%;
+   height:100%;
+   background: #000000bc;
+   display: grid;
+   font-size: 3em;
+   place-items: center;
+   text-align: center;
+  }
+  i{
+   text-align: center;
+   width: 100%;
+   display: block;
+  }
+  form{
+   padding: 10px;
+  }
+  input,textarea,button{
+   border-radius: 0;
+   padding: 12px;
+   width:100%;
+   font-size: 1em;
+   margin-block: 8px;
+   outline: none;
+  }
+input::placeholder,textarea::placeholder{
+   font-weight: 300;
+  }
+  button{
+   background: black;
+   color: white;
+  }
+  button span{
+    
+  }
+ </style>
 </head>
 
 <body>
+  <header>
+    <div>
+     Hire Us
+     
+    </div>
+  </header>
+  <i>Referral code earns a discount.</i>
+  
+  <form action="https://formsubmit.co/info@amandainc.xyz" id="myForm" method="POST">
+    <input type="hidden" name="_next" value="https://amandainc2024.github.io/Amanda/success.html" id="next">
+       <input type="hidden" name="_captcha" value="false">
+       <input type="hidden" name="_template" value="table">
+   <input type="text" placeholder="Name" name="name">
+   <input type="text" placeholder="Company/Business" name="company">
+   <input type="email" placeholder="Email" name="email">
+   <input type="phone" placeholder="Whatsapp Number" name="phone">
+   <input type="text" placeholder="Referral Id" readonly name="referral" id="ref">
+   <label for="type" >Type Of Project</label>
+   <select name="type" style="margin-block: 8px; border-radius: 0;font-size: 1em; width: 240px; padding: 5px;" id="type">
+    <option value="Web Design">Web Design</option>
+    <option value="Graphics">Graphics</option>
+    <option value="Social Media Management">Social Media Management</option>
+    <option value="App Development">App Development</option>
+    <option value="SEO">SEO</option>
+    <option value="Google Business Profile">Google Business Profile</option>
+    <option value="Other">Other</option>
+   </select>
+   <input type="text" placeholder="Budget" name="budget">
+   <label for="d">When do you need the project done?:</label><input type="date" name="date" id="d" value="2025-05-17">
+   <textarea name="more"  rows="8" placeholder="Tell us more about your project"></textarea>
+  <button type="submit">Send Message</button>
+  </form>
+  
+     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const supabaseUrl = "https://dlittddujwtdceassnwh.supabase.co";
+  const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRsaXR0ZGR1and0ZGNlYXNzbndoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDYwMjUwMzksImV4cCI6MjA2MTYwMTAzOX0.Ro-mvdFQr1FDh219EPuI2Fm2S3yYXeTBwiO9UxIFv0s'; // Replace with your public anon key
+  
+  const client = window.supabase.createClient(supabaseUrl, supabaseKey);
+  
+  const urlParams = new URLSearchParams(window.location.search);
+const ref = urlParams.get('ref');
+document.getElementById('ref').value = ref;
+
+async function addView(refid) {
+  const { data, error } = await client
+    .from('users')
+    .select('visits')
+    .eq('ref_id', refid)
+    .single();
+
+  if (error) {
+    console.error('Error fetching current visits:', error.message);
+    return;
+  }
+
+  const newVisits = data.visits + 1;
+
+  const { error: updateError } = await client
+    .from('users')
+    .update({ visits: newVisits })
+    .eq('ref_id', refid);
+
+  if (updateError) {
+    console.error('Failed to update visits:', updateError.message);
+  } else {
+    console.log('Visit count incremented');
+  }
+}
+
+async function addOrder(refid) {
+  const { data, error } = await client
+    .from('users')
+    .select('orders')
+    .eq('ref_id', refid)
+    .single();
+
+  if (error) {
+    console.error('Error fetching current visits:', error.message);
+    return;
+  }
+console.log(data)
+  const newVisits = data.orders + 1;
+
+  const {error: updateError } = await client
+    .from('users')
+    .update({ orders: newVisits})
+    .eq('ref_id', refid);
+
+
+  if (updateError) {
+    console.error('Failed to update visits:', updateError.message);
+  } else {
+    console.log('Visit count incremented');
+  }
+}
+
+if (ref){
+ addView(ref)
+}
+
+const form = document.getElementById('myForm');
+
+form.addEventListener('submit', async (e) => {
+ e.preventDefault(); 
  
+ addOrder(ref)
+ form.submit(); 
+});
+
+
+</script>
+  <p>&copy; 2025 Amanda Inc. All rights reserved.</p>
 </body>
 
 </html>
