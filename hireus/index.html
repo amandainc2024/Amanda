@@ -107,68 +107,29 @@ const ref = urlParams.get('ref');
 document.getElementById('ref').value = ref;
 
 async function addView(refid) {
-  const { data, error } = await client
-    .from('users')
-    .select('visits')
-    .eq('ref_id', refid)
-    .single();
-
-  if (error) {
-    console.error('Error fetching current visits:', error.message);
-    return;
-  }
-
-  const newVisits = data.visits + 1;
-
-  const { error: updateError } = await client
-    .from('users')
-    .update({ visits: newVisits })
-    .eq('ref_id', refid);
+  
+  const { error: updateError, data } = await client
+    .from('orders')
+    .insert({
+      ref_id:refid
+    })
+    .select('id')
 
   if (updateError) {
     console.error('Failed to update visits:', updateError.message);
   } else {
-    console.log('Visit count incremented');
-  }
-}
-
-async function addOrder(refid) {
-  const { data, error } = await client
-    .from('users')
-    .select('orders')
-    .eq('ref_id', refid)
-    .single();
-
-  if (error) {
-    console.error('Error fetching current visits:', error.message);
-    return;
-  }
-console.log(data)
-  const newVisits = data.orders + 1;
-
-  const {error: updateError } = await client
-    .from('users')
-    .update({ orders: newVisits})
-    .eq('ref_id', refid);
-
-
-  if (updateError) {
-    console.error('Failed to update visits:', updateError.message);
-  } else {
-    console.log('Visit count incremented');
+    document.getElementById('ref').value += data[0].id;
   }
 }
 
 if (ref){
  addView(ref)
 }
-
+addView('539HAIwwGknd')
 const form = document.getElementById('myForm');
 
 form.addEventListener('submit', async (e) => {
  e.preventDefault(); 
- 
- addOrder(ref)
  form.submit(); 
 });
 
