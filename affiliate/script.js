@@ -58,4 +58,5 @@ function animationLoop( t )
 		pos.needsUpdate = true;
 	
     renderer.render( scene, camera );
+    document.querySelector('.hero').style.color='transparent'
 }
