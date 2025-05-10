@@ -4,14 +4,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Amanda Affiliate</title>
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="style.css" type="text/css" media="all" />
 </head>
 <body>
   <nav>
     <div class="upper">
       <img src="logo.png" alt="Logo" />
-      <i class="fa fa-bars" onclick="nav(45,this)">=</i>
+      <i class="fa fa-bars" onclick="nav(45,this)"></i>
     </div>
     <div class="items">
       <a href="">Home</a>
@@ -27,9 +27,13 @@
     <h1>Become an Amanda Services Affiliate</h1>
     <p>Earn real income by promoting Amanda Services to potential customers.</p>
     <button><a href="">Join Now</a></button>
+    <button class="out"><a href="">Log into your account</a></button>
+    <p style="font-size:.7em">7 days, 12hours, 25 minutes and 5 seconds</p>
+
   </main>
-  <img src="logo.png" alt="" class="hi" width="100%">
-  
+  <div class="hero">
+    
+  </div>
   <section class="ov" id="ov">
     <h2>Looking to become an affiliate partner?</h2>
     <p>Our affiliate program, called the Amanda Affiliates, provides a unique way for you to  link to and promote Amanda Services. Earn commissions on clients who may need our services that hire us through your link. Commissions can be earned from services i.e; Web development, App development, Social media management and Graphics design.</p>
@@ -40,21 +44,21 @@
     <div class="content">
       <div class="item">
         <div class="heading">
-          <i class="fa fa-">X</i>
+          <i class="fa fa-user-plus"></i>
           <h3>Join</h3>
         </div>
         <p>Join from the <a href="">Sign Up Page</a> to get an account for free of charge. You will be provided with an affiliate link on the dashboard.</p>
       </div>
       <div class="item">
         <div class="heading">
-          <i class="fa fa-">X</i>
+          <i class="fa fa-bullhorn"></i>
           <h3>Promote</h3>
         </div>
         <p>Promote your link with the support of exclusive offers and a library of banners, posters and other materials we provide.</p>
       </div>
       <div class="item">
         <div class="heading">
-          <i class="fa fa-">%</i>
+          <i class="fa fa-coins"></i>
           <h3>Earn</h3>
         </div>
         <p>Earn for new customers you refer. Track your success on a live dashboard and withdraw your earnings with 1:1 support team.</p>
@@ -63,6 +67,103 @@
   </section>
   
   
+  <section class="faq">
+    <h2>Frequently Asked Questions</h2>
+    
+    <div class="con" onclick="c(this)">
+  <p class="question">
+    <span>How do I sign up as an affiliate?</span>
+    <i class="fa fa-chevron-down"></i>
+  </p>
+  <p class="answer none">
+    Signing up as an affiliate is easy! Simply visit our registration page, fill out the required information, and you'll get access to your unique referral links and affiliate dashboard.
+  </p>
+</div>
+
+<div class="con" onclick="c(this)">
+  <p class="question">
+    <span>How do I track my referrals?</span>
+    <i class="fa fa-chevron-down"></i>
+  </p>
+  <p class="answer none">
+    You can track all your referrals through your personalized affiliate dashboard. It provides real-time updates on clicks, conversions, and earnings.
+  </p>
+</div>
+
+<div class="con" onclick="c(this)">
+  <p class="question">
+    <span>What commission do I earn as an affiliate?</span>
+    <i class="fa fa-chevron-down"></i>
+  </p>
+  <p class="answer none">
+    Our affiliates earn a competitive commission on every sale made through their referral link. The exact commission rate varies from 5% upto 10% based on the product or service being referred.
+  </p>
+</div>
+
+<div class="con" onclick="c(this)">
+  <p class="question">
+    <span>How do I get paid?</span>
+    <i class="fa fa-chevron-down"></i>
+  </p>
+  <p class="answer none">
+    Payments are made through the withdraw page to your mobile money account for ugandans and non-ugandans through our agent.
+  </p>
+</div>
+
+<div class="con" onclick="c(this)">
+  <p class="question">
+    <span>Can I promote your affiliate program on social media?</span>
+    <i class="fa fa-chevron-down"></i>
+  </p>
+  <p class="answer none">
+    Absolutely! You can promote our affiliate program on social media, blogs, and websites. Just make sure to use your unique affiliate link when sharing.
+  </p>
+</div>
+
+<div class="con" onclick="c(this)">
+  <p class="question">
+    <span>What if my referral link isn't working?</span>
+    <i class="fa fa-chevron-down"></i>
+  </p>
+  <p class="answer none">
+    If you're experiencing issues with your referral link, contact our support team. We'll assist you in troubleshooting and ensure your link is functioning correctly.
+  </p>
+</div>
+
+  </section>
+  
+  <style>
+  .faq .con:not(:has(.answer.none)) i{
+    transition: all;
+    transform: rotate(180deg);
+}
+
+  
+   .faq .con{
+      padding: 20px 8px;
+      border-top: solid 1px #aaa;
+    }
+    .faq .con:last-of-type{
+      border-block: solid 1px #aaa;
+
+    }
+    .question{
+      display:flex;
+      gap: 7px;
+      font-weight: 600;
+      align-items: center;
+      font-size:1.14em;
+      justify-content: space-between;
+    }
+    
+    .answer{
+      color: #333;
+      margin-top: 8px;
+    }
+    .none{
+      display: none;
+    }
+  </style>
   <footer class="">
     <p class="coy">&copy; 2025 Amanda Inc. All rights reserved.</p>
     <p><b>Legal:</b>
@@ -78,5 +179,17 @@
     
   </footer>
   <script src="main.js"></script>
+  <script async src="https://ga.jspm.io/npm:es-module-shims@1.5.1/dist/es-module-shims.js" crossorigin="anonymous"></script>
+<script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.165.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.165.0/examples/jsm/"
+    }
+  }
+</script>
+<!-- partial -->
+  <script type="module" src="./script.js"></script>
+
 </body>
 </html>

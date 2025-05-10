@@ -1,0 +1,37 @@
+/*
+
+ThreeJs custom waves
+Original script by ThreeJS : https://threejs.org/examples/canvas_particles_waves.html
+Modified version for Cloudoru by Kevin Rajaram : http://kevinrajaram.com
+Date: 08/14/2014
+
+
+*/
+
+var SEPARATION = 40, AMOUNTX = 130, AMOUNTY = 35;
+
+var container;
+var camera, scene, renderer;
+/*
+
+if (window.WebGLRenderingContext){
+renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+}
+else {
+renderer = new THREE.CanvasRenderer();
+}
+*/
+
+var particles, particle, count = 0;
+
+var windowHalfX = window.innerWidth / 2;
+var windowHalfY = window.innerHeight / 2;
+
+init();
+animate();
+
+function init() {
+
+container = document.createElement( 'div' );
+document.body.appendChild( container );
+if(container) {

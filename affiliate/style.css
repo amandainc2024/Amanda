@@ -67,6 +67,9 @@ main{
     flex-direction: column;
     gap: 12px;
 }
+.hero{
+    margin-top: -20vh;
+}
 main h1{
     font-size: 2.4em;
     font-weight: 600;
@@ -84,6 +87,12 @@ main button, #ov button{
     text-align: center;
     margin-top: 12px;
     font-size: 1em;
+}
+main button.out{
+    background: #eee;
+}
+main button.out a{
+    color: #000;
 }
  button a{
     text-decoration: none;
@@ -125,11 +134,13 @@ section h2{
 }
 .how .content .heading{
     display: flex;
+    align-items: center;
     margin-block: 7px;
 }
 .how .content .heading i{
     color: #F7AF10;
     margin-inline: 7px;
+    font-size: 2em;
 }
 .how .content .heading h3{
     font-size: 1em;
@@ -188,4 +199,5 @@ footer .aa a{
     footer{
         font-size: 10px;
     }
+ 
 }
