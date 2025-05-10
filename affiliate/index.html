@@ -28,7 +28,31 @@
     <p>Earn real income by promoting Amanda Services to potential customers.</p>
     <button><a href="">Join Now</a></button>
     <button class="out"><a href="">Log into your account</a></button>
-    <p style="font-size:.7em">7 days, 12hours, 25 minutes and 5 seconds</p>
+    <p style="font-size:.7em" id="countdown">7 days, 12hours, 25 minutes and 5 seconds</p>
+<script>
+  // Set the countdown target date and time (YYYY-MM-DDTHH:MM:SS)
+  const targetDate = new Date("2025-05-17T12:30:00").getTime();
+
+  const countdown = document.getElementById("countdown");
+
+  const interval = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    if (distance < 0) {
+      clearInterval(interval);
+      countdown.textContent = "Countdown ended";
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    countdown.textContent = `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds`;
+  }, 1000);
+</script>
 
   </main>
   <div class="hero">
@@ -167,14 +191,14 @@
   <footer class="">
     <p class="coy">&copy; 2025 Amanda Inc. All rights reserved.</p>
     <p><b>Legal:</b>
-     <a href="">Terms</a> | 
-     <a href="">Privacy Policy</a> | 
-     <a href="">Disclaimer</a>.
+     <a href="..legal/terms.html">Terms</a> | 
+     <a href="../legal/privacy.html">Privacy Policy</a> | 
+     <a href="../legal/disclaimer.html">Disclaimer</a>.
     </p>
     <br><br>
     <p class="d">DEVELOPERS</p>
     <h4>Amanda Inc.</h4>
-    <p class="aa"><a href="">About Amanda</a><a href="">Amanda Products</a><a href="">Terms</a></p>
+    <p class="aa"><a href="../index.html">About Amanda</a><a href="../index.html">Amanda Products</a><a href="../legal/terms.html">Terms</a></p>
     
     
   </footer>
