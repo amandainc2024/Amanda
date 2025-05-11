@@ -79,6 +79,11 @@ main p{
     font-size: .9em;
     color: #666;
 }
+button {
+    border:none;
+    
+    
+}
 main button, #ov button{
     background: #0663ff;
     color: #fff;
