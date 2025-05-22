@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title></title>
+ <script src="browser.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+ <nav class="fixed w-full top-0 z-6 flex justify-center items-center h-14  bg-white gap-3">
+  <a href="" class="text-lime-500 underline">My Role</a>
+  <img src="logo.png" class="w-10 bg-black h-10 " alt="logo">
+  <a href=""class="text-lime-500 underline">Promote</a>
+ </nav>
+ <main class="p-4 flex items-center flex-col box-border">
+  <h1 class="text-center mt-22 text-3xl font-bold ">Skills and <span class="text-lime-600"> Innovation</span> for a Sustainable Living</h1>
+  <p class="text-center text-gray-600 text-sm">In an era marked by climate change, resource depletion, and global inequality, the concept of sustainable living is no longer optional—it’s essential.</p>
+  <button class=" w-27 text-sm text-white py-2 px-3 rounded-full" type="button">Read More</button>
+ </main>
+ <div class="mt-12 md:mt-0 overflow-hidden items-end flex gap-0.5">
+  <img src="https://images.unsplash.com/photo-1581091012184-5c48156e6f1a" class="w-1/4 md:w-3/10 r-l bg-black h-78" alt="me">
+  <img src="hero.jpeg" class="w-1/2 object-cover md:w-4/10 rounded-2xl bg-black h-55" alt="product">
+  <img src="https://images.unsplash.com/photo-1603899121578-cafab0b6c914" class="w-1/4 md:w-3/10 r-r bg-black h-78" alt="me">
+ </div>
+ <style>
+img{color:#455}
+  .r-l{
+   border-radius: 0 20px 20px 0;
+  }
+    .r-r {
+   border-radius: 20px 0 0 20px;
+  }
+ </style>
+ 
+ <h2 class="text-center text-3xl mt-12 font-bold underline decoration-5 decoration-lime-500">Why pencil holders?</h2>
+ <p class="m-2">Achieving a sustainable future requires not only awareness but also the development of practical skills and the embrace of innovation that supports long-term ecological balance, social equity, and economic viability. This project explores the intersection of skills and innovation in promoting sustainable living, and how individuals, communities, and nations can leverage them to secure a healthier planet for generations to come.</p>
+
+
+<video muted controls src="video.mov" class="h-50  rounded-lg mx-auto shadow-xl aspect-video  bg-black" alt="working"></video>
+ <h2 class="text-center text-3xl mt-12 font-bold underline decoration-5 decoration-lime-500">Role of pencil holders in sustainability?</h2>
+ <ul class="p-4">
+  <ul>
+  <li class="my-2"><b>Waste Reduction:</b> By transforming discarded plastics into pencil holders, we reduce the volume of non-biodegradable waste, promoting a cleaner environment and supporting recycling efforts.</li>
+
+  <li class="my-2"><b>Education:</b> The promotional website can educate users on the importance of reducing plastic consumption, provide DIY recycling tips, and highlight success stories of sustainable living, fostering a more informed public.</li>
+
+  <li class="my-2"><b>Behavioral Change:</b> Using eco-friendly products in everyday life helps normalize sustainable choices. The pencil holder acts as a daily reminder of environmental responsibility.</li>
+
+  <li class="my-2"><b>Innovation Inspiration:</b> It demonstrates how low-cost, innovative solutions can turn waste into functional, marketable products, encouraging others to pursue green entrepreneurship.</li>
+</ul>
+
+ </ul>
+
+ <h2 class="text-center text-3xl mt-12 font-bold underline decoration-5 decoration-lime-500">Promote</h2>
+ <p class="text-gray-400">Spread the message to promote sustainable living!</p>
+<div onclick="share(this)" class="bg-lime-200 mb-9 text-center ml-[12.5%] rounded-lg p-5 w-3/4 mx-auto relative">
+ <h2 class="text-2xl font-bold my-4">Skills for Sustainability!</h2>
+ <p>To maintain a sustainable living, we can use our skills and innovation such as reusing plastic wastes to create new products which reduces environmental degradation hence sustainable living. *Learn more*</p>
+ <button class="w-full bg-lime-400 rounded py-3" type="button">Share</button>
+</div>
+
+<script>
+  function share(ths) {
+    if (navigator.share) {
+      navigator.share({
+        title: ths.querySelector('h2').innerHTML,
+        text: ths.querySelector('p').innerHTML,
+        url: window.location.href,
+      })
+      .then(() => console.log('Shared successfully!'))
+      .catch((error) => console.error('Error sharing:', error));
+    } else {
+      alert('Sharing not supported in this browser.');
+    }
+  }
+  console.log(window.location.href)
+</script>
+
+
+<footer class="py-5 w-full text-center bg-lime-300">
+  <h2>Abbey Pencil Holders</h2>
+  <p>Copyright &copy; 2025. All rights reserved</p>
+</footer>
+
+</body>
+
+</html>
