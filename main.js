@@ -182,7 +182,7 @@ setTimeout(function() {
   setTimeout(function() {
   document.querySelector('.splash').style.display = 'none';
 }, 2000)
-}, 3000)
+}, 16000)
 
 
 function ad() {
