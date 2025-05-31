@@ -62,7 +62,6 @@
     }
 }
 body {
-  font-size:20px;
   padding:9px;
     background: #eee;
     margin-top: 40px;
@@ -489,6 +488,8 @@ footer > p{
     display: none;
 }
 @media screen and (max-width: 400px) {
+  body{
+    font-size:21px;}
     nav img{
         aspect-ratio: 1/1;
         width: 27px;
